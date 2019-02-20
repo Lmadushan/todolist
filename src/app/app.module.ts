@@ -9,17 +9,23 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { ItemsComponent } from './components/items/items.component';
 
 import { ItemService } from './services/item.service';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { AddItemComponent } from './components/add-item/add-item.component';
 
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    ItemsComponent
+    ItemsComponent,
+    NavbarComponent,
+    AddItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase, 'todolist'),
-    AngularFirestoreModule
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    FormsModule
   ],
   providers: [ItemService],
   bootstrap: [AppComponent]
